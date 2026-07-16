@@ -1,0 +1,180 @@
+/* ==========================================
+   DASHBOARD THEME TOGGLE (DARK & LIGHT)
+   ========================================== */
+
+/* LIGHT THEME (Default) */
+body.light-theme {
+    background-color: #f3f4f6 !important;
+    color: #1f2937 !important;
+}
+
+body.light-theme .theme-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    color: #1f2937 !important;
+}
+
+body.light-theme .text-main { color: #1f2937 !important; }
+body.light-theme .text-muted { color: #6b7280 !important; }
+body.light-theme .bg-elevated { background-color: #f9fafb !important; }
+
+/* DARK THEME */
+body.dark-theme {
+    background: linear-gradient(135deg, #050508 0%, #1a1a2e 100%) !important;
+    color: #ffffff !important;
+}
+
+body.dark-theme .theme-card {
+    background-color: #0d0f14 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+}
+
+body.dark-theme .text-main { color: #ffffff !important; }
+body.dark-theme .text-muted { color: rgba(255, 255, 255, 0.6) !important; }
+body.dark-theme .bg-elevated { background-color: rgba(255, 255, 255, 0.03) !important; }
+
+/* Progress Bar Gradient (Orange to Purple) */
+.progress-gradient {
+    background: linear-gradient(90deg, #ff5e00 0%, #7000ff 100%) !important;
+}
+
+/* Override untuk elemen Tailwind */
+body.dark-theme .bg-white,
+body.dark-theme .bg-gray-50,
+body.dark-theme .bg-gray-100 {
+    background-color: #0d0f14 !important;
+}
+
+body.dark-theme .text-gray-800,
+body.dark-theme .text-gray-900 {
+    color: #ffffff !important;
+}
+
+body.dark-theme .text-gray-500,
+body.dark-theme .text-gray-600 {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+body.dark-theme .divide-gray-200 > * + * {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Smooth Transition */
+body, .theme-card, .bg-white, .text-gray-800 {
+    transition: all 0.3s ease-in-out;
+}
+/* ==========================================
+   MOBILE RESPONSIVE OPTIMIZATION
+   ========================================== */
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+    /* Kartu Ringkasan - Stack Vertikal */
+    .grid-cols-3 {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    /* Grid 2 kolom jadi 1 kolom */
+    .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Grafik - Full Width */
+    [style*="height:300px"] {
+        height: 250px !important;
+    }
+
+    /* Tabel - Scroll Horizontal */
+    .overflow-x-auto {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Filter Form - Stack Vertikal */
+    .flex-wrap.gap-4 {
+        flex-direction: column !important;
+    }
+
+    .flex-1.min-w-\[200px\] {
+        min-width: 100% !important;
+    }
+
+    /* Tombol - Full Width di Mobile */
+    .mb-6.flex.flex-wrap.gap-3 {
+        flex-direction: column !important;
+    }
+
+    .mb-6.flex.flex-wrap.gap-3 button,
+    .mb-6.flex.flex-wrap.gap-3 a {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    /* Modal - Full Screen di Mobile */
+    .max-w-2xl {
+        max-width: 95% !important;
+        margin: 1rem !important;
+    }
+
+    /* Floating Button - Pindah ke bawah */
+    .fixed.bottom-6.right-6 {
+        bottom: 1.5rem !important;
+        right: 1.5rem !important;
+        width: 3.5rem !important;
+        height: 3.5rem !important;
+    }
+
+    /* Text Size - Lebih Kecil di Mobile */
+    .text-3xl {
+        font-size: 1.75rem !important;
+    }
+
+    /* Padding - Lebih Kecil */
+    .p-6 {
+        padding: 1rem !important;
+    }
+
+    /* Hide unnecessary elements on mobile */
+    .hidden-mobile {
+        display: none !important;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    /* Font lebih kecil */
+    .text-lg {
+        font-size: 1rem !important;
+    }
+
+    .text-xl {
+        font-size: 1.25rem !important;
+    }
+
+    /* Chart height lebih kecil */
+    [style*="height: 250px"] {
+        height: 200px !important;
+    }
+
+    /* Card padding lebih kecil */
+    .rounded-xl.p-6 {
+        padding: 0.75rem !important;
+    }
+}
+
+/* Touch-friendly buttons */
+@media (hover: none) {
+    button, a {
+        min-height: 44px !important;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"] {
+        min-height: 44px !important;
+    }
+}
